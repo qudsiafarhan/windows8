@@ -15,23 +15,6 @@
         body {
             font-family: Arial, sans-serif; 
         }
-        @media screen and (max-width:480px){
-            .container{
-                grid-template-columns: auto;
-            }
-        }
-        @media screen and (min-width:760px) {
-            .container{
-                grid-template-columns: auto auto;
-            }
-        }
-        
-        @media screen and (min-width:1200px) {
-            .container{
-                grid-template-columns: auto auto auto;
-            }
-        }
-    
         .container{
             margin: auto;
            background-color: rgb(10, 10, 70);
@@ -40,15 +23,15 @@
            max-width: 1250px;
            text-align: center;
            display: grid;
-           grid-template-columns: auto auto auto;
-           grid-template-rows: auto auto auto;
-           grid-gap: 15px;
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           /* grid-gap: 15px; */
         }
 
        .box1{
         background-color: rgb(44, 194, 194);
         height: 200px;
         width: 400px;
+        flex-wrap: wrap;
        }
        h1{
         text-align: left;
@@ -75,6 +58,8 @@
         background-color: rgba(226, 50, 226, 0.39);
         height: 200px;
         width: 400px;
+        position: relative;
+        flex-wrap: wrap;
     }
     .para1{
         width: 180px;
@@ -106,7 +91,10 @@
         height: 200px;
         width: 200px; 
         display: grid;
+        position: relative;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         grid-template-columns: auto auto auto;
+        flex-wrap: wrap;
         /* background-color: aqua; */
    
     }
@@ -172,7 +160,9 @@
      .box4{
         height: 200px;
         width: 400px;
+        flex-wrap: wrap;
         display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         grid-template-columns: auto auto auto;
         /* background-color: aqua; */
       
@@ -221,6 +211,7 @@
         background-size: 100% 100%;
         height: 400px;
         width: 400px;
+        flex-wrap: wrap;
         grid-row: 2 /  4 ;
         grid-column: 2 ;
            
@@ -238,6 +229,7 @@
     .box6{
         height: 200px;
         width: 400px;
+        flex-wrap: wrap;
         margin: auto;
         margin-left: -3px;
         display: grid;
@@ -273,6 +265,8 @@
         height: 200px;
         width: 200px; 
         display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         grid-template-columns: auto auto;
         margin: auto;
         margin-left: -3px;
@@ -302,6 +296,7 @@
         background-color: green;   
         width: 380px;
         height: 190px;
+        flex-wrap: wrap;
         margin-top: -8px;
         margin-left: 6px;
     }
@@ -312,7 +307,32 @@
         margin-left: 30px;
         color: white;
     }
-
+    
+         @media screen and (max-width:480px){
+            .container{
+                grid-template-columns: auto;
+            }
+            .box1 .box2 .box3 .box4 .box5 .box6 .box7 .box8{
+                grid-template-columns: auto;
+            }
+        }
+        @media screen and (min-width:760px) {
+            .container{
+                grid-template-columns: auto auto;
+            }
+            .box1 .box2 .box3 .box4 .box5 .box6 .box7 .box8{
+                grid-template-columns: auto auto;
+        }
+    }
+        
+        @media screen and (min-width:1200px) {
+            .container{
+                grid-template-columns: auto auto auto;
+            }
+            .box1 .box2 .box3 .box4 .box5 .box6 .box7 .box8{
+                grid-template-columns: auto auto auto;
+        }
+        }
     </style>
 </head>
 <body>
